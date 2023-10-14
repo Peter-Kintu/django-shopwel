@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+
+{%block title %}Add product{% endblock %}
+
+{% block content %}
+   <h1 class="text-2xl">Add product</h1>
+
+
+<form method="post" action="." enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button class="py-4 px-8 pg-teal-500 text-white hover:bg-teal-800">Submit</button>
+</form>
+
+{% if title == 'Edit product' %}
+    <a href="#" class="mt-2 inline-block py-4 px-8 bg-red-500 text-white">Delete product</a>
+{% endif %}
+{% endblock %}
+{% endblock %}

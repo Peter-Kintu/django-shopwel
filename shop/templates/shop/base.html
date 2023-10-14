@@ -1,0 +1,60 @@
+{% load menu %}
+
+<!DOCTYPE html>
+        
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"content="width=device-width, initial">
+
+            <title>{% block title %}{% endblock %} shopwel</title>
+
+            {% block meta %}
+            {% endblock %}
+
+                <script src="http://cdn.tailwindcss.com"></script>
+            </head>
+            
+            <body>
+                <nav class="max-w-6.5xl mx-auto py-4 px-6 flex items-center justify-between bg-green-600">
+                    <div class="logo">
+                        <a href="/" class="text-white">shop well</a>
+                    </div>
+
+                    <div class="search">
+                        <form method="get" action="/search">
+                            <input type="search"name="query" placeholder="search..." class="py-2 px-4 rounded-xl">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-red">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                                </svg>                              
+                            </button>
+
+                        </form>
+                    </div>
+
+                    <div class="menu flex item-center space-x-4">
+                            {% menu %}
+                        <a href="{ url 'about'}" class="text-white">About</a>
+
+                        <a href="{% url 'cart_view' %}" class="py-2 px-4 bg-teal-800 text-white hover:bg-teal-900">Cart ({{ cart|length }})</a>
+
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'myaccount'%}" class="py-2 px-4 bg-teal-800 text-white hover:bg-teal-900">My account</a>
+
+                        {% if request.user.userprofile.is_vendor %}
+                        <a href="{% url 'my_store' %}" clas="py-2 px-4 bg-teal-800 text-white hover:bg-teal-900">my store</a>
+                        {% endif %}
+                    {% endif %}
+                    </div>
+                </nav>
+                <div class="max-w-4xl mx-auto py-4 px-7">
+            {% block content %}
+            {% endblock %}
+            </div>
+
+            {% block scripts %}
+            {% endblock %}
+            </body>
+        </html>
+        

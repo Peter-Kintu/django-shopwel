@@ -1,0 +1,16 @@
+{% extends 'shop/base.html' %}
+
+{%block title %}My account{% endblock %}
+
+{% block content %}
+<div class="items">
+    <div class="img img1">
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPb-wMCtYgr7r_dRhZKhfNKlSekseS7m8Kf8r1rRwWygh6gSIF06kaxwraYRHWhlQT5co&usqp=CAU"
+            alt=""
+        />
+    </div>
+<h1 class="text-2xl">My account</h1>
+
+<a href="{% url 'logout' %}" class="mt-6 inline-block py-4 px-8 bg-red-400 text-white">logout</a>
+{% endblock %}

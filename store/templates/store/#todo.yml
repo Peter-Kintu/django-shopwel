@@ -1,0 +1,25 @@
+#todo.txt
+      #install tailwindcss
+      #create virtual env
+      #install and setup
+      #int database, super user, test run
+      #create store app for base pages
+      #create app for userprifile
+      #create app for product
+         #add category model
+      #list out newest products on the front page
+      #product detail view
+      #category view
+      #simple search
+      #vendor detail page
+      #make it possible to sign up, log in and out
+      #create my account page
+      #add product to the cart
+      #view cart
+      #checkout
+      #implement payment gateway
+      #admin pages for the vendors
+      #settings files for production
+       #requirements file
+       #add a robots file to the project
+      #deploy project
